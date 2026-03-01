@@ -1,0 +1,3 @@
+from evaluation.plots import plot_feature_importance
+
+plot_feature_importance()

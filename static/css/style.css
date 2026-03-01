@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container */
+.dashboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card design */
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+}
+
+/* Fade animation */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Badge styling */
+.badge {
+    margin: 20px auto;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    color: white;
+}
+
+.badge.low {
+    background-color: #1cc88a;
+}
+
+.badge.high {
+    background-color: #e74a3b;
+}
+
+/* Explanation text */
+.explanation {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #4e73df;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #2e59d9;
+}

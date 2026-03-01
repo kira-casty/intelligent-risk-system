@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Risk Assessment</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Intelligent Vehicle Risk Assessment</h1>
+        <form action="/predict-ui" method="post">
+            <label>Age:</label>
+            <input type="number" name="age" required><br>
+
+            <label>Income:</label>
+            <input type="number" name="income" required><br>
+
+            <label>Vehicle Age:</label>
+            <input type="number" name="vehicle_age" required><br>
+
+            <label>Past Claims:</label>
+            <input type="number" name="past_claims" required><br>
+
+            <label>Claim Amount:</label>
+            <input type="number" name="claim_amount" required><br>
+
+            <label>Accident Severity (1-5):</label>
+            <input type="number" name="accident_severity" min="1" max="5" required><br>
+
+            <button type="submit">Check Risk</button>
+        </form>
+    </div>
+</body>
+</html>

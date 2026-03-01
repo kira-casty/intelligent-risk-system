@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Analysis Result</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="card fade-in">
+
+        <h1>Risk Assessment Result</h1>
+
+        <div id="riskBadge" class="badge">
+            {{ risk_level }}
+        </div>
+
+        <p class="explanation">
+            This risk is classified as <strong>{{ risk_level }}</strong> 
+            due to anomaly detection patterns identified by the trained model.
+        </p>
+
+        <canvas id="riskChart" width="400" height="200"></canvas>
+
+        <a href="/" class="back-btn">Run Another Assessment</a>
+
+    </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const riskLevel = "{{ risk_level }}";
+    const badge = document.getElementById("riskBadge");
+
+    let low = 0;
+    let high = 0;
+
+    if (riskLevel === "High Risk") {
+        high = 1;
+        badge.classList.add("high");
+    } else {
+        low = 1;
+        badge.classList.add("low");
+    }
+
+    const ctx = document.getElementById('riskChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Low Risk', 'High Risk'],
+            datasets: [{
+                label: 'Risk Classification',
+                data: [low, high]
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 1
+                }
+            }
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>
